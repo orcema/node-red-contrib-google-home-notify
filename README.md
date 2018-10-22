@@ -1,7 +1,7 @@
-# node-red-contrib-google-home-notify
+# node-red-contrib-google-home-notify-VolumeAdjustable
 
-These nodes are based on a fork of the google-home-notifier-library:
-<a href="https://github.com/nabbl/google-home-notifier">google-home-notifier Fork</a>
+This node is forked from:
+<a href="https://github.com/nabbl/node-red-contrib-google-home-notify">node-red-contrib-google-home-notify</a>
 
 ## What it does:
 
@@ -14,6 +14,8 @@ Great for telling us about finished Home Automation tasks.
 
 Hook up an Inject-Node to the Input channel and send a simple text phrase. This node will send the text to the google translation API which returns an MP3 file which then gets casted to your chosen Google device.
 
+The <b>volume level for the notification</b> can be set with <i>msg.emitVolume</i> having a value expressed in percentage 0-100.
+
 ### Play MP3
 
 If the input text is an mp3 url start with **http** and end up with **.mp3**, Google device can directly play it. You can host some mp3 files on your own server. For example.
@@ -24,7 +26,7 @@ If the input text is an mp3 url start with **http** and end up with **.mp3**, Go
 
 Install node-red.
 
-Install this package with "npm install node-red-contrib-google-home-notify --save" in ~./node-red or via the Palette Manager in node-red.
+Install this package with "npm install node-red-contrib-google-home-notify-volume-adjustable --save" in ~./node-red or via the Palette Manager in node-red.
 
 If everything was successfull you should see a new node in the output category in node-red after a restart.
 

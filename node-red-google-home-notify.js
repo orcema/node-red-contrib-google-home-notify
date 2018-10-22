@@ -28,7 +28,7 @@ module.exports = function (RED) {
     });
 
     //Known issue: when 'language' is Default/Auto, this will fail & return undefined
-    this.googlehomenotifier = require('google-home-notify')(this.ipaddress, this.language, 1);
+    this.googlehomenotifier = require('google-home-notifier-volume-adjustable')(this.ipaddress, this.language, 1);
 
     //Build another API to auto detect IP Addresses
     discoverIpAddresses('googlecast', function (ipaddresses) {
@@ -107,14 +107,16 @@ module.exports = function (RED) {
         });
         return;
       }
-
-      config.googlehomenotifier.notify(msg.payload, function (result) {
+      config.googlehomenotifier.setEmitVolume(msg.emitVolume,function(){ // toggle the emit volume
+        config.googlehomenotifier.notify(msg.payload, function (result) {
           node.status({
             fill: "green",
             shape: "ring",
             text: "Successfully sent voice command"
           });
-      });
+        });
+      })
+
     });
 
     config.googlehomenotifier.on('error', function (error) {

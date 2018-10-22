@@ -1,7 +1,8 @@
 {
-  "name": "node-red-contrib-google-home-notify",
-  "version": "0.0.6",
+  "name": "node-red-contrib-google-home-notify-volume-adjustable",
+  "version": "0.0.10",
   "main": "node-red-google-home-notify.js",
+  "author": "Orce MARINKOVSKI",
   "node-red": {
     "nodes": {
       "google-notify": "node-red-google-home-notify.js"
@@ -9,11 +10,11 @@
   },
   "dependencies": {
     "bonjour": "^3.5.0",
-    "google-home-notify": "^0.0.3"
+    "google-home-notifier-volume-adjustable": "latest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nabbl/node-red-contrib-google-home-notify.git"
+    "url": "git+https://github.com/orcema/node-red-contrib-google-home-notify.git"
   },
   "keywords": [
     "node-red",
